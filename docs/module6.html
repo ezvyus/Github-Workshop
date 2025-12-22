@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modül 6: Vitrin ve Kariyer | GitHub Workshop</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github-dark.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header class="header">
+        <div class="header-left">
+            <button class="sidebar-toggle" id="sidebarToggle"><i class="fas fa-bars"></i></button>
+            <a href="index.html" class="logo"><i class="fab fa-github"></i><span>GitHub Workshop</span></a>
+        </div>
+        <div class="header-right">
+            <a href="https://github.com/Furk4nBulut/Github-Workshop" target="_blank" class="header-link"><i
+                    class="fab fa-github"></i><span>GitHub</span></a>
+        </div>
+    </header>
+
+    <div class="main-wrapper">
+        <aside class="sidebar" id="sidebar">
+            <nav class="sidebar-nav">
+                <div class="nav-section"><a href="index.html" class="nav-item"><i class="fas fa-home"></i><span>Ana
+                            Sayfa</span></a></div>
+                <div class="nav-section">
+                    <div class="nav-section-title"><i class="fas fa-rocket"></i><span>Modül 1-5</span></div>
+                    <a href="module1.html" class="nav-item">Giriş</a>
+                    <a href="module2.html" class="nav-item">Temel Beceriler</a>
+                    <a href="module3.html" class="nav-item">İş Akışı</a>
+                    <a href="module4.html" class="nav-item">Takım Çalışması</a>
+                    <a href="module5.html" class="nav-item">İleri Seviye</a>
+                </div>
+                <div class="nav-section">
+                    <div class="nav-section-title"><i class="fas fa-star"></i><span>Modül 6: Kariyer</span></div>
+                    <a href="module6.html" class="nav-item active">Profile README</a>
+                    <a href="module6.html#pages" class="nav-item">GitHub Pages</a>
+                    <a href="module6.html#portfolio" class="nav-item">Portfolyo</a>
+                </div>
+            </nav>
+        </aside>
+
+        <main class="content">
+            <article class="article">
+                <div class="breadcrumb"><a href="index.html"><i class="fas fa-home"></i></a><span>/</span><span>Modül
+                        6</span></div>
+
+                <h1>🌟 Modül 6: Vitrin ve Kariyer</h1>
+                <p class="lead">Profile README, GitHub Pages ve profesyonel portfolyo oluşturma.</p>
+
+                <div class="stats-bar">
+                    <div class="stat"><i class="far fa-clock"></i><span>~1.5 saat</span></div>
+                    <div class="stat"><i class="fas fa-signal"></i><span>Orta</span></div>
+                </div>
+
+                <h2 id="profile-readme">👤 GitHub Profile README</h2>
+
+                <p>GitHub, kullanıcı adınızla aynı isimde özel bir repo oluşturmanıza izin verir. Bu repo'nun README'si
+                    profilinizde görünür!</p>
+
+                <div class="callout callout-info">
+                    <i class="fas fa-magic"></i>
+                    <div><strong>Örnek:</strong> Kullanıcı adınız <code>furkandev</code> ise,
+                        <code>furkandev/furkandev</code> adında repo oluşturun.</div>
+                </div>
+
+                <h3>Adımlar</h3>
+                <div class="steps">
+                    <div class="step">
+                        <div class="step-number">1</div>
+                        <div class="step-content"><strong>Repo oluşturun</strong><span>Kullanıcı adınızla aynı
+                                isimde</span></div>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">2</div>
+                        <div class="step-content"><strong>Public yapın</strong><span>Özel repo görünmez</span></div>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">3</div>
+                        <div class="step-content"><strong>README.md ekleyin</strong><span>Markdown formatında</span>
+                        </div>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">4</div>
+                        <div class="step-content"><strong>Özelleştirin</strong><span>Badge, stat, emoji kullanın</span>
+                        </div>
+                    </div>
+                </div>
+
+                <h3>Örnek README</h3>
+                <div class="code-block">
+                    <div class="code-header"><span>README.md</span><button class="copy-btn" onclick="copyCode(this)"><i
+                                class="far fa-copy"></i></button></div>
+                    <pre><code class="language-markdown"># 👋 Merhaba, Ben [Adınız]!
+
+### 💻 Full Stack Developer | 📍 İstanbul
+
+- 🔭 Şu anda **[Proje]** üzerinde çalışıyorum
+- 🌱 **React** ve **TypeScript** öğreniyorum
+- 💬 **Web Development** hakkında soru sorabilirsiniz
+
+## 🛠️ Teknolojiler
+![JavaScript](https://img.shields.io/badge/-JavaScript-F7DF1E?logo=javascript&logoColor=black)
+![React](https://img.shields.io/badge/-React-61DAFB?logo=react&logoColor=black)
+![Node.js](https://img.shields.io/badge/-Node.js-339933?logo=node.js&logoColor=white)
+
+## 📊 GitHub Stats
+![Stats](https://github-readme-stats.vercel.app/api?username=KULLANICI&show_icons=true&theme=dark)</code></pre>
+                </div>
+
+                <h3>Popüler Widget'lar</h3>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Widget</th>
+                            <th>URL</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>GitHub Stats</td>
+                            <td>github-readme-stats.vercel.app</td>
+                        </tr>
+                        <tr>
+                            <td>Top Languages</td>
+                            <td>github-readme-stats.vercel.app</td>
+                        </tr>
+                        <tr>
+                            <td>Streak Stats</td>
+                            <td>github-readme-streak-stats.herokuapp.com</td>
+                        </tr>
+                        <tr>
+                            <td>Trophies</td>
+                            <td>github-profile-trophy.vercel.app</td>
+                        </tr>
+                        <tr>
+                            <td>Profile Views</td>
+                            <td>komarev.com/ghpvc</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <h2 id="pages">🌐 GitHub Pages</h2>
+
+                <p>GitHub Pages, statik web sitelerini ücretsiz olarak yayınlamanızı sağlar.</p>
+
+                <h3>Site Türleri</h3>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Tür</th>
+                            <th>URL</th>
+                            <th>Repo Adı</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>User Site</td>
+                            <td>username.github.io</td>
+                            <td>username.github.io</td>
+                        </tr>
+                        <tr>
+                            <td>Project Site</td>
+                            <td>username.github.io/repo</td>
+                            <td>herhangi bir isim</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <h3>Kurulum</h3>
+                <div class="steps">
+                    <div class="step">
+                        <div class="step-number">1</div>
+                        <div class="step-content"><strong>Repo
+                                oluşturun</strong><span><code>username.github.io</code></span></div>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">2</div>
+                        <div class="step-content"><strong>index.html ekleyin</strong><span>Ana sayfa dosyası</span>
+                        </div>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">3</div>
+                        <div class="step-content"><strong>Commit ve push</strong><span>Değişiklikleri gönderin</span>
+                        </div>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">4</div>
+                        <div class="step-content"><strong>Settings → Pages</strong><span>Kaynak branch seçin</span>
+                        </div>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">5</div>
+                        <div class="step-content"><strong>Birkaç dakika bekleyin</strong><span>Site yayına alınır</span>
+                        </div>
+                    </div>
+                </div>
+
+                <h2 id="portfolio">💼 Profesyonel Portfolyo</h2>
+
+                <h3>Profilinizi Optimize Edin</h3>
+                <div class="feature-list">
+                    <div class="feature-item"><i class="fas fa-check-circle"></i><span><strong>Profil
+                                fotoğrafı:</strong> Profesyonel bir fotoğraf</span></div>
+                    <div class="feature-item"><i class="fas fa-check-circle"></i><span><strong>Bio:</strong> Kendinizi
+                            kısa tanıtın</span></div>
+                    <div class="feature-item"><i class="fas fa-check-circle"></i><span><strong>Konum:</strong> Şehir,
+                            Ülke</span></div>
+                    <div class="feature-item"><i class="fas fa-check-circle"></i><span><strong>Website:</strong>
+                            Portfolyo siteniz</span></div>
+                    <div class="feature-item"><i class="fas fa-check-circle"></i><span><strong>Pinned repos:</strong> En
+                            iyi 6 projeniz</span></div>
+                </div>
+
+                <h3>Repo'larınızı Güzelleştirin</h3>
+                <div class="feature-list">
+                    <div class="feature-item"><i class="fas fa-file-alt"></i><span>Kapsamlı README dosyası</span></div>
+                    <div class="feature-item"><i class="fas fa-tags"></i><span>Anlamlı başlık ve açıklama</span></div>
+                    <div class="feature-item"><i class="fas fa-image"></i><span>Ekran görüntüleri ve demolar</span>
+                    </div>
+                    <div class="feature-item"><i class="fas fa-balance-scale"></i><span>Lisans dosyası</span></div>
+                    <div class="feature-item"><i class="fas fa-hashtag"></i><span>İlgili topics</span></div>
+                </div>
+
+                <div class="callout callout-success">
+                    <i class="fas fa-trophy"></i>
+                    <div><strong>Tebrikler!</strong> Eğitimi tamamladınız! Artık GitHub'ı profesyonel seviyede
+                        kullanabilirsiniz.</div>
+                </div>
+
+                <div class="page-nav">
+                    <a href="module5.html" class="nav-prev"><i class="fas fa-arrow-left"></i><span>Modül 5: İleri
+                            Seviye</span></a>
+                    <a href="index.html" class="nav-next"><span>Ana Sayfa</span><i class="fas fa-arrow-right"></i></a>
+                </div>
+            </article>
+            <footer class="footer">
+                <p>Made with ❤️ by <a href="https://github.com/Furk4nBulut" target="_blank">Furkan Bulut</a></p>
+            </footer>
+        </main>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/languages/markdown.min.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modül 4: Takım Çalışması | GitHub Workshop</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github-dark.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header class="header">
+        <div class="header-left">
+            <button class="sidebar-toggle" id="sidebarToggle"><i class="fas fa-bars"></i></button>
+            <a href="index.html" class="logo"><i class="fab fa-github"></i><span>GitHub Workshop</span></a>
+        </div>
+        <div class="header-right">
+            <a href="https://github.com/Furk4nBulut/Github-Workshop" target="_blank" class="header-link"><i
+                    class="fab fa-github"></i><span>GitHub</span></a>
+        </div>
+    </header>
+
+    <div class="main-wrapper">
+        <aside class="sidebar" id="sidebar">
+            <nav class="sidebar-nav">
+                <div class="nav-section"><a href="index.html" class="nav-item"><i class="fas fa-home"></i><span>Ana
+                            Sayfa</span></a></div>
+                <div class="nav-section">
+                    <div class="nav-section-title"><i class="fas fa-rocket"></i><span>Modül 1</span></div><a
+                        href="module1.html" class="nav-item">Giriş</a>
+                </div>
+                <div class="nav-section">
+                    <div class="nav-section-title"><i class="fas fa-code"></i><span>Modül 2</span></div><a
+                        href="module2.html" class="nav-item">Temel Beceriler</a>
+                </div>
+                <div class="nav-section">
+                    <div class="nav-section-title"><i class="fas fa-code-branch"></i><span>Modül 3</span></div><a
+                        href="module3.html" class="nav-item">İş Akışı</a>
+                </div>
+                <div class="nav-section">
+                    <div class="nav-section-title"><i class="fas fa-users"></i><span>Modül 4: Takım</span></div>
+                    <a href="module4.html" class="nav-item active">Organization</a>
+                    <a href="module4.html#pr" class="nav-item">Pull Request</a>
+                    <a href="module4.html#issues" class="nav-item">Issues ve Projects</a>
+                </div>
+                <div class="nav-section">
+                    <div class="nav-section-title"><i class="fas fa-bolt"></i><span>Modül 5</span></div><a
+                        href="module5.html" class="nav-item">İleri Seviye</a>
+                </div>
+                <div class="nav-section">
+                    <div class="nav-section-title"><i class="fas fa-star"></i><span>Modül 6</span></div><a
+                        href="module6.html" class="nav-item">Kariyer</a>
+                </div>
+            </nav>
+        </aside>
+
+        <main class="content">
+            <article class="article">
+                <div class="breadcrumb"><a href="index.html"><i class="fas fa-home"></i></a><span>/</span><span>Modül
+                        4</span></div>
+
+                <h1>👥 Modül 4: Takım Çalışması</h1>
+                <p class="lead">Organization, Pull Request, Issues ve Projects ile ekip çalışması.</p>
+
+                <div class="stats-bar">
+                    <div class="stat"><i class="far fa-clock"></i><span>~1.5 saat</span></div>
+                    <div class="stat"><i class="fas fa-signal"></i><span>Orta</span></div>
+                </div>
+
+                <h2 id="organization">🏢 GitHub Organization</h2>
+                <p>Organization, birden fazla kişinin birlikte çalışabileceği kurumsal bir yapıdır.</p>
+
+                <h3>Organization Avantajları</h3>
+                <div class="feature-list">
+                    <div class="feature-item"><i class="fas fa-check-circle"></i><span>Takım halinde repo
+                            yönetimi</span></div>
+                    <div class="feature-item"><i class="fas fa-check-circle"></i><span>Farklı yetki seviyeleri</span>
+                    </div>
+                    <div class="feature-item"><i class="fas fa-check-circle"></i><span>Takım tartışmaları</span></div>
+                    <div class="feature-item"><i class="fas fa-check-circle"></i><span>Proje bazlı erişim
+                            kontrolü</span></div>
+                </div>
+
+                <h3>Organization Oluşturma</h3>
+                <div class="steps">
+                    <div class="step">
+                        <div class="step-number">1</div>
+                        <div class="step-content"><strong>GitHub'da + menüsü</strong><span>Sağ üstteki + ikonuna
+                                tıklayın</span></div>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">2</div>
+                        <div class="step-content"><strong>New organization</strong><span>Yeni organizasyon seçeneğini
+                                seçin</span></div>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">3</div>
+                        <div class="step-content"><strong>Free plan</strong><span>Ücretsiz planı seçin</span></div>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">4</div>
+                        <div class="step-content"><strong>Bilgileri girin</strong><span>İsim, email ve detaylar</span>
+                        </div>
+                    </div>
+                </div>
+
+                <h2 id="pr">🔀 Pull Request (PR)</h2>
+
+                <p>Pull Request, yaptığınız değişiklikleri ana projeye dahil etmek için kullandığınız resmi istektir.
+                </p>
+
+                <div class="callout callout-info">
+                    <i class="fas fa-lightbulb"></i>
+                    <div><strong>PR = Code Review + Discussion + Merge</strong></div>
+                </div>
+
+                <h3>PR Workflow</h3>
+                <div class="steps">
+                    <div class="step">
+                        <div class="step-number">1</div>
+                        <div class="step-content"><strong>Branch
+                                oluştur</strong><span><code>git checkout -b feature/yeni-ozellik</code></span></div>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">2</div>
+                        <div class="step-content"><strong>Değişiklik yap</strong><span>Kod değişikliklerini commit
+                                et</span></div>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">3</div>
+                        <div class="step-content">
+                            <strong>Push</strong><span><code>git push origin feature/yeni-ozellik</code></span></div>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">4</div>
+                        <div class="step-content"><strong>PR aç</strong><span>GitHub'da "Compare & pull request"
+                                tıkla</span></div>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">5</div>
+                        <div class="step-content"><strong>Review bekle</strong><span>Takım arkadaşlarının incelemesini
+                                bekle</span></div>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">6</div>
+                        <div class="step-content"><strong>Merge</strong><span>Onaylandıktan sonra birleştir</span></div>
+                    </div>
+                </div>
+
+                <h3>İyi Bir PR Nasıl Olmalı?</h3>
+                <div class="feature-list">
+                    <div class="feature-item"><i class="fas fa-check"></i><span><strong>Küçük ve odaklı:</strong> Tek
+                            bir özellik/düzeltme</span></div>
+                    <div class="feature-item"><i class="fas fa-check"></i><span><strong>Açıklayıcı başlık:</strong> Ne
+                            yapıldığını özetler</span></div>
+                    <div class="feature-item"><i class="fas fa-check"></i><span><strong>Detaylı açıklama:</strong> Neden
+                            yapıldığını anlatır</span></div>
+                    <div class="feature-item"><i class="fas fa-check"></i><span><strong>Görsel:</strong> Mümkünse
+                            screenshot/gif</span></div>
+                </div>
+
+                <h2 id="issues">📋 Issues ve Projects</h2>
+
+                <h3>Issues</h3>
+                <p>Issues, hata raporları, özellik istekleri ve görevleri takip etmek için kullanılır.</p>
+
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Label</th>
+                            <th>Kullanım</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><code>bug</code></td>
+                            <td>Hata raporu</td>
+                        </tr>
+                        <tr>
+                            <td><code>enhancement</code></td>
+                            <td>Yeni özellik</td>
+                        </tr>
+                        <tr>
+                            <td><code>documentation</code></td>
+                            <td>Dokümantasyon</td>
+                        </tr>
+                        <tr>
+                            <td><code>good first issue</code></td>
+                            <td>Yeni başlayanlar için</td>
+                        </tr>
+                        <tr>
+                            <td><code>help wanted</code></td>
+                            <td>Yardım aranıyor</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <h3>Projects (Kanban)</h3>
+                <p>GitHub Projects, Kanban tarzı proje yönetimi sunar:</p>
+                <div class="feature-list">
+                    <div class="feature-item"><i class="fas fa-columns"></i><span><strong>Todo:</strong>
+                            Yapılacaklar</span></div>
+                    <div class="feature-item"><i class="fas fa-spinner"></i><span><strong>In Progress:</strong> Devam
+                            edenler</span></div>
+                    <div class="feature-item"><i class="fas fa-check-double"></i><span><strong>Done:</strong>
+                            Tamamlananlar</span></div>
+                </div>
+
+                <div class="page-nav">
+                    <a href="module3.html" class="nav-prev"><i class="fas fa-arrow-left"></i><span>Modül 3: İş
+                            Akışı</span></a>
+                    <a href="module5.html" class="nav-next"><span>Modül 5: İleri Seviye</span><i
+                            class="fas fa-arrow-right"></i></a>
+                </div>
+            </article>
+
+            <footer class="footer">
+                <p>Made with ❤️ by <a href="https://github.com/Furk4nBulut" target="_blank">Furkan Bulut</a></p>
+            </footer>
+        </main>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modül 2: Temel Teknik Beceriler | GitHub Workshop</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github-dark.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header class="header">
+        <div class="header-left">
+            <button class="sidebar-toggle" id="sidebarToggle"><i class="fas fa-bars"></i></button>
+            <a href="index.html" class="logo"><i class="fab fa-github"></i><span>GitHub Workshop</span></a>
+        </div>
+        <div class="header-right">
+            <a href="https://github.com/Furk4nBulut/Github-Workshop" target="_blank" class="header-link"><i
+                    class="fab fa-github"></i><span>GitHub</span></a>
+        </div>
+    </header>
+
+    <div class="main-wrapper">
+        <aside class="sidebar" id="sidebar">
+            <nav class="sidebar-nav">
+                <div class="nav-section"><a href="index.html" class="nav-item"><i class="fas fa-home"></i><span>Ana
+                            Sayfa</span></a></div>
+                <div class="nav-section">
+                    <div class="nav-section-title"><i class="fas fa-rocket"></i><span>Modül 1: Giriş</span></div>
+                    <a href="module1.html" class="nav-item">Git ve GitHub Nedir?</a>
+                </div>
+                <div class="nav-section">
+                    <div class="nav-section-title"><i class="fas fa-code"></i><span>Modül 2: Temel Beceriler</span>
+                    </div>
+                    <a href="module2.html" class="nav-item active">Git Komutları</a>
+                    <a href="module2.html#markdown" class="nav-item">Markdown</a>
+                    <a href="module2.html#licenses" class="nav-item">Lisanslar</a>
+                </div>
+                <div class="nav-section">
+                    <div class="nav-section-title"><i class="fas fa-code-branch"></i><span>Modül 3: İş Akışı</span>
+                    </div>
+                    <a href="module3.html" class="nav-item">Branch Yönetimi</a>
+                </div>
+                <div class="nav-section">
+                    <div class="nav-section-title"><i class="fas fa-users"></i><span>Modül 4: Takım Çalışması</span>
+                    </div>
+                    <a href="module4.html" class="nav-item">Organization</a>
+                </div>
+                <div class="nav-section">
+                    <div class="nav-section-title"><i class="fas fa-bolt"></i><span>Modül 5: İleri Seviye</span></div>
+                    <a href="module5.html" class="nav-item">Rebase ve Stash</a>
+                </div>
+                <div class="nav-section">
+                    <div class="nav-section-title"><i class="fas fa-star"></i><span>Modül 6: Kariyer</span></div>
+                    <a href="module6.html" class="nav-item">Profile README</a>
+                </div>
+                <div class="nav-section">
+                    <div class="nav-section-title"><i class="fas fa-book"></i><span>Referanslar</span></div>
+                    <a href="cheatsheet-git.html" class="nav-item">Git Cheat Sheet</a>
+                </div>
+            </nav>
+        </aside>
+
+        <main class="content">
+            <article class="article">
+                <div class="breadcrumb">
+                    <a href="index.html"><i class="fas fa-home"></i></a>
+                    <span>/</span>
+                    <span>Modül 2</span>
+                </div>
+
+                <h1>🛠️ Modül 2: Temel Teknik Beceriler</h1>
+                <p class="lead">Git komutları, Markdown ve lisanslar hakkında temel bilgiler.</p>
+
+                <div class="stats-bar">
+                    <div class="stat"><i class="far fa-clock"></i><span>~1.5 saat</span></div>
+                    <div class="stat"><i class="fas fa-signal"></i><span>Başlangıç</span></div>
+                </div>
+
+                <h2 id="git-commands">📋 Temel Git Komutları</h2>
+
+                <p>Bu 6 temel komut, günlük Git kullanımınızın <strong>%90'ını</strong> oluşturacak:</p>
+
+                <table>
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>Komut</th>
+                            <th>Açıklama</th>
+                            <th>Analoji</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td><code>git init</code></td>
+                            <td>Klasörü Git projesine çevirir</td>
+                            <td>📦 Kutu oluşturma</td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td><code>git status</code></td>
+                            <td>Değişiklikleri gösterir</td>
+                            <td>👀 Durumu kontrol</td>
+                        </tr>
+                        <tr>
+                            <td>3</td>
+                            <td><code>git add</code></td>
+                            <td>Değişiklikleri hazırlar</td>
+                            <td>📋 Listeye ekleme</td>
+                        </tr>
+                        <tr>
+                            <td>4</td>
+                            <td><code>git commit</code></td>
+                            <td>Değişiklikleri kaydeder</td>
+                            <td>💾 Kaydetme</td>
+                        </tr>
+                        <tr>
+                            <td>5</td>
+                            <td><code>git push</code></td>
+                            <td>Değişiklikleri gönderir</td>
+                            <td>📤 Yükleme</td>
+                        </tr>
+                        <tr>
+                            <td>6</td>
+                            <td><code>git pull</code></td>
+                            <td>Değişiklikleri çeker</td>
+                            <td>📥 İndirme</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <h3>1. git init</h3>
+                <p>Boş bir klasörü Git repository'sine dönüştürür:</p>
+                <div class="code-block">
+                    <div class="code-header"><span>Terminal</span><button class="copy-btn" onclick="copyCode(this)"><i
+                                class="far fa-copy"></i></button></div>
+                    <pre><code class="language-bash"># Yeni klasör oluştur ve git başlat
+mkdir proje-adi
+cd proje-adi
+git init
+
+# Çıktı: Initialized empty Git repository in .../proje-adi/.git/</code></pre>
+                </div>
+
+                <h3>2. git status</h3>
+                <p>Repository'nin mevcut durumunu gösterir:</p>
+                <div class="code-block">
+                    <div class="code-header"><span>Terminal</span><button class="copy-btn" onclick="copyCode(this)"><i
+                                class="far fa-copy"></i></button></div>
+                    <pre><code class="language-bash">git status
+
+# Hangi dosyalar değişti?
+# Hangi dosyalar staged?
+# Hangi branch'tayız?</code></pre>
+                </div>
+
+                <h3>3. git add</h3>
+                <p>Değişiklikleri staging area'ya ekler:</p>
+                <div class="code-block">
+                    <div class="code-header"><span>Terminal</span><button class="copy-btn" onclick="copyCode(this)"><i
+                                class="far fa-copy"></i></button></div>
+                    <pre><code class="language-bash"># Tek dosya ekle
+git add dosya.txt
+
+# Tüm değişiklikleri ekle
+git add .
+
+# Belirli uzantıdaki dosyaları ekle
+git add *.js</code></pre>
+                </div>
+
+                <h3>4. git commit</h3>
+                <p>Staged değişiklikleri kalıcı olarak kaydeder:</p>
+                <div class="code-block">
+                    <div class="code-header"><span>Terminal</span><button class="copy-btn" onclick="copyCode(this)"><i
+                                class="far fa-copy"></i></button></div>
+                    <pre><code class="language-bash"># Mesaj ile commit
+git commit -m "feat: login sayfası eklendi"
+
+# Add + Commit birlikte (sadece tracked dosyalar)
+git commit -am "fix: buton rengi düzeltildi"</code></pre>
+                </div>
+
+                <h3>5. git push</h3>
+                <p>Yerel commit'leri uzak repository'ye gönderir:</p>
+                <div class="code-block">
+                    <div class="code-header"><span>Terminal</span><button class="copy-btn" onclick="copyCode(this)"><i
+                                class="far fa-copy"></i></button></div>
+                    <pre><code class="language-bash"># origin remote'una main branch'ı gönder
+git push origin main
+
+# Varsayılan remote ve branch'a gönder
+git push</code></pre>
+                </div>
+
+                <h3>6. git pull</h3>
+                <p>Uzak repository'den değişiklikleri çeker:</p>
+                <div class="code-block">
+                    <div class="code-header"><span>Terminal</span><button class="copy-btn" onclick="copyCode(this)"><i
+                                class="far fa-copy"></i></button></div>
+                    <pre><code class="language-bash"># Uzak değişiklikleri indir ve birleştir
+git pull origin main
+
+# Varsayılan ayarlarla çek
+git pull</code></pre>
+                </div>
+
+                <h2 id="markdown">📝 Markdown</h2>
+
+                <p>Markdown, README dosyaları ve dokümantasyon için kullanılan hafif bir işaretleme dilidir.</p>
+
+                <h3>Temel Söz Dizimi</h3>
+                <div class="code-block">
+                    <div class="code-header"><span>Markdown</span><button class="copy-btn" onclick="copyCode(this)"><i
+                                class="far fa-copy"></i></button></div>
+                    <pre><code># Başlık 1
+## Başlık 2
+### Başlık 3
+
+**Kalın metin** ve *italik metin*
+
+- Madde 1
+- Madde 2
+  - Alt madde
+
+1. Sıralı madde
+2. Sıralı madde
+
+[Link](https://example.com)
+![Resim](image.png)
+
+`inline kod` ve
+
+```javascript
+// Kod bloğu
+console.log("Merhaba");
+```
+
+> Alıntı bloğu
+
+| Tablo | Başlık |
+|-------|--------|
+| Veri  | Veri   |</code></pre>
+                </div>
+
+                <h2 id="licenses">📄 Lisanslar</h2>
+
+                <p>Projenizi paylaşırken bir lisans seçmek önemlidir:</p>
+
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Lisans</th>
+                            <th>Özellik</th>
+                            <th>Kullanım</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>MIT</strong></td>
+                            <td>En esnek</td>
+                            <td>Ticari kullanım, değiştirme, dağıtım serbest</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Apache 2.0</strong></td>
+                            <td>Patent koruması</td>
+                            <td>MIT gibi + patent hakları</td>
+                        </tr>
+                        <tr>
+                            <td><strong>GPL v3</strong></td>
+                            <td>Copyleft</td>
+                            <td>Türev çalışmalar da açık kaynak olmalı</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Unlicense</strong></td>
+                            <td>Public domain</td>
+                            <td>Hiçbir kısıtlama yok</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <div class="callout callout-info">
+                    <i class="fas fa-lightbulb"></i>
+                    <div>
+                        <strong>Öneri:</strong> Emin değilseniz <strong>MIT</strong> lisansını seçin. En yaygın ve esnek
+                        lisanstır.
+                    </div>
+                </div>
+
+                <div class="page-nav">
+                    <a href="module1.html" class="nav-prev"><i class="fas fa-arrow-left"></i><span>Modül 1:
+                            Giriş</span></a>
+                    <a href="module3.html" class="nav-next"><span>Modül 3: İş Akışı</span><i
+                            class="fas fa-arrow-right"></i></a>
+                </div>
+            </article>
+
+            <footer class="footer">
+                <p>Made with ❤️ by <a href="https://github.com/Furk4nBulut" target="_blank">Furkan Bulut</a></p>
+            </footer>
+        </main>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/languages/bash.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/languages/markdown.min.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>

@@ -1,40 +1,42 @@
-// Mobile Menu Toggle
-document.addEventListener('DOMContentLoaded', function() {
-    const hamburger = document.querySelector('.hamburger');
-    const navMenu = document.querySelector('.nav-menu');
-    
-    if (hamburger) {
-        hamburger.addEventListener('click', function() {
-            navMenu.classList.toggle('active');
-            hamburger.classList.toggle('active');
+// DOM Ready
+document.addEventListener('DOMContentLoaded', function () {
+    // Initialize Highlight.js
+    if (typeof hljs !== 'undefined') {
+        hljs.highlightAll();
+    }
+
+    // Sidebar Toggle
+    const sidebarToggle = document.getElementById('sidebarToggle');
+    const sidebar = document.getElementById('sidebar');
+
+    if (sidebarToggle && sidebar) {
+        sidebarToggle.addEventListener('click', () => {
+            sidebar.classList.toggle('open');
+        });
+
+        // Close sidebar when clicking outside
+        document.addEventListener('click', (e) => {
+            if (!sidebar.contains(e.target) && !sidebarToggle.contains(e.target)) {
+                sidebar.classList.remove('open');
+            }
         });
     }
-    
-    // Close menu when clicking on a link
-    const navLinks = document.querySelectorAll('.nav-menu a');
-    navLinks.forEach(link => {
-        link.addEventListener('click', () => {
-            navMenu.classList.remove('active');
-            hamburger.classList.remove('active');
-        });
-    });
-    
-    // Navbar scroll effect
-    const navbar = document.querySelector('.navbar');
-    
-    window.addEventListener('scroll', function() {
-        if (window.scrollY > 50) {
-            navbar.style.background = 'rgba(15, 23, 42, 0.95)';
-            navbar.style.boxShadow = '0 4px 20px rgba(0, 0, 0, 0.3)';
-        } else {
-            navbar.style.background = 'rgba(15, 23, 42, 0.8)';
-            navbar.style.boxShadow = 'none';
+
+    // Active navigation item based on current page
+    const currentPage = window.location.pathname.split('/').pop() || 'index.html';
+    const navItems = document.querySelectorAll('.nav-item');
+
+    navItems.forEach(item => {
+        item.classList.remove('active');
+        const href = item.getAttribute('href');
+        if (href === currentPage || (currentPage === '' && href === 'index.html')) {
+            item.classList.add('active');
         }
     });
-    
+
     // Smooth scroll for anchor links
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function(e) {
+        anchor.addEventListener('click', function (e) {
             e.preventDefault();
             const target = document.querySelector(this.getAttribute('href'));
             if (target) {
@@ -42,82 +44,91 @@ document.addEventListener('DOMContentLoaded', function() {
                     behavior: 'smooth',
                     block: 'start'
                 });
+                // Close sidebar on mobile
+                sidebar.classList.remove('open');
             }
         });
     });
-    
-    // Intersection Observer for fade-in animations
-    const observerOptions = {
-        root: null,
-        rootMargin: '0px',
-        threshold: 0.1
-    };
-    
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add('visible');
-            }
-        });
-    }, observerOptions);
-    
-    // Observe elements with fade-in class
-    document.querySelectorAll('.feature-card, .module-card, .resource-card').forEach(el => {
-        el.style.opacity = '0';
-        el.style.transform = 'translateY(20px)';
-        el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
-        observer.observe(el);
-    });
-    
-    // Add visible class styles
-    const style = document.createElement('style');
-    style.textContent = `
-        .feature-card.visible,
-        .module-card.visible,
-        .resource-card.visible {
-            opacity: 1 !important;
-            transform: translateY(0) !important;
-        }
-    `;
-    document.head.appendChild(style);
-    
-    // Typing effect for code window
-    const codeLines = document.querySelectorAll('.code-body code');
-    
-    // Stats counter animation
-    const stats = document.querySelectorAll('.stat-number');
-    
-    const countUp = (element, target) => {
-        let current = 0;
-        const increment = target / 50;
-        const timer = setInterval(() => {
-            current += increment;
-            if (current >= target) {
-                element.textContent = target + (element.dataset.suffix || '');
-                clearInterval(timer);
-            } else {
-                element.textContent = Math.floor(current) + (element.dataset.suffix || '');
-            }
-        }, 30);
-    };
-    
-    const statsObserver = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                const target = entry.target;
-                const value = target.textContent.replace(/\D/g, '');
-                const suffix = target.textContent.replace(/\d/g, '');
-                target.dataset.suffix = suffix;
-                countUp(target, parseInt(value));
-                statsObserver.unobserve(target);
-            }
-        });
-    }, { threshold: 0.5 });
-    
-    stats.forEach(stat => statsObserver.observe(stat));
+
+    // Highlight current section in sidebar based on scroll
+    const sections = document.querySelectorAll('h2[id], h3[id]');
+
+    if (sections.length > 0) {
+        const observerOptions = {
+            rootMargin: '-80px 0px -80% 0px',
+            threshold: 0
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const id = entry.target.getAttribute('id');
+                    const navLink = document.querySelector(`.nav-item[href*="#${id}"]`);
+                    if (navLink) {
+                        navItems.forEach(item => {
+                            if (item.getAttribute('href').includes('#')) {
+                                item.classList.remove('active');
+                            }
+                        });
+                        navLink.classList.add('active');
+                    }
+                }
+            });
+        }, observerOptions);
+
+        sections.forEach(section => observer.observe(section));
+    }
 });
 
-// Console easter egg
-console.log('%c🎓 GitHub Workshop', 'font-size: 24px; font-weight: bold; color: #6366f1;');
-console.log('%cSıfırdan Profesyonelliğe GitHub Eğitimi', 'font-size: 14px; color: #94a3b8;');
+// Copy code functionality
+function copyCode(button) {
+    const codeBlock = button.closest('.code-block');
+    const code = codeBlock.querySelector('code').textContent;
+
+    navigator.clipboard.writeText(code).then(() => {
+        const icon = button.querySelector('i');
+        icon.classList.remove('fa-copy');
+        icon.classList.add('fa-check');
+        button.classList.add('copied');
+
+        setTimeout(() => {
+            icon.classList.remove('fa-check');
+            icon.classList.add('fa-copy');
+            button.classList.remove('copied');
+        }, 2000);
+    }).catch(err => {
+        console.error('Failed to copy:', err);
+    });
+}
+
+// Table of contents scroll spy
+function updateTOC() {
+    const toc = document.querySelector('.toc');
+    if (!toc) return;
+
+    const headings = document.querySelectorAll('h2[id], h3[id]');
+    const tocLinks = toc.querySelectorAll('a');
+
+    let current = '';
+
+    headings.forEach(heading => {
+        const rect = heading.getBoundingClientRect();
+        if (rect.top <= 100) {
+            current = heading.getAttribute('id');
+        }
+    });
+
+    tocLinks.forEach(link => {
+        link.classList.remove('active');
+        if (link.getAttribute('href') === `#${current}`) {
+            link.classList.add('active');
+        }
+    });
+}
+
+window.addEventListener('scroll', updateTOC);
+
+// Console Easter Egg
+console.log('%c🎓 GitHub Workshop Wiki', 'font-size: 20px; font-weight: bold; color: #6366f1;');
+console.log('%cKapsamlı Git ve GitHub Eğitimi', 'font-size: 14px; color: #8b949e;');
 console.log('%c👉 https://github.com/Furk4nBulut/Github-Workshop', 'font-size: 12px; color: #10b981;');

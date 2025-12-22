@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modül 3: Profesyonel İş Akışı | GitHub Workshop</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github-dark.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header class="header">
+        <div class="header-left">
+            <button class="sidebar-toggle" id="sidebarToggle"><i class="fas fa-bars"></i></button>
+            <a href="index.html" class="logo"><i class="fab fa-github"></i><span>GitHub Workshop</span></a>
+        </div>
+        <div class="header-right">
+            <a href="https://github.com/Furk4nBulut/Github-Workshop" target="_blank" class="header-link"><i
+                    class="fab fa-github"></i><span>GitHub</span></a>
+        </div>
+    </header>
+
+    <div class="main-wrapper">
+        <aside class="sidebar" id="sidebar">
+            <nav class="sidebar-nav">
+                <div class="nav-section"><a href="index.html" class="nav-item"><i class="fas fa-home"></i><span>Ana
+                            Sayfa</span></a></div>
+                <div class="nav-section">
+                    <div class="nav-section-title"><i class="fas fa-rocket"></i><span>Modül 1: Giriş</span></div>
+                    <a href="module1.html" class="nav-item">Git ve GitHub Nedir?</a>
+                </div>
+                <div class="nav-section">
+                    <div class="nav-section-title"><i class="fas fa-code"></i><span>Modül 2: Temel Beceriler</span>
+                    </div>
+                    <a href="module2.html" class="nav-item">Git Komutları</a>
+                </div>
+                <div class="nav-section">
+                    <div class="nav-section-title"><i class="fas fa-code-branch"></i><span>Modül 3: İş Akışı</span>
+                    </div>
+                    <a href="module3.html" class="nav-item active">Branch Yönetimi</a>
+                    <a href="module3.html#fork" class="nav-item">Fork ve Clone</a>
+                    <a href="module3.html#commits" class="nav-item">Conventional Commits</a>
+                </div>
+                <div class="nav-section">
+                    <div class="nav-section-title"><i class="fas fa-users"></i><span>Modül 4</span></div>
+                    <a href="module4.html" class="nav-item">Takım Çalışması</a>
+                </div>
+                <div class="nav-section">
+                    <div class="nav-section-title"><i class="fas fa-bolt"></i><span>Modül 5</span></div>
+                    <a href="module5.html" class="nav-item">İleri Seviye</a>
+                </div>
+                <div class="nav-section">
+                    <div class="nav-section-title"><i class="fas fa-star"></i><span>Modül 6</span></div>
+                    <a href="module6.html" class="nav-item">Kariyer</a>
+                </div>
+            </nav>
+        </aside>
+
+        <main class="content">
+            <article class="article">
+                <div class="breadcrumb">
+                    <a href="index.html"><i class="fas fa-home"></i></a>
+                    <span>/</span>
+                    <span>Modül 3</span>
+                </div>
+
+                <h1>🔄 Modül 3: Profesyonel İş Akışı</h1>
+                <p class="lead">Branch stratejileri, Fork/Clone ve Conventional Commits standartları.</p>
+
+                <div class="stats-bar">
+                    <div class="stat"><i class="far fa-clock"></i><span>~1.5 saat</span></div>
+                    <div class="stat"><i class="fas fa-signal"></i><span>Orta</span></div>
+                </div>
+
+                <h2 id="branching">🌿 Branch Yönetimi</h2>
+
+                <p>Branch'lar, ana kodunuzu bozmadan yeni özellikler geliştirmenizi sağlar.</p>
+
+                <div class="callout callout-warning">
+                    <i class="fas fa-exclamation-triangle"></i>
+                    <div><strong>Altın Kural:</strong> Asla <code>main</code> branch'ında direkt çalışmayın!</div>
+                </div>
+
+                <h3>Branch Komutları</h3>
+                <div class="code-block">
+                    <div class="code-header"><span>Terminal</span><button class="copy-btn" onclick="copyCode(this)"><i
+                                class="far fa-copy"></i></button></div>
+                    <pre><code class="language-bash"># Branch listele
+git branch
+
+# Yeni branch oluştur
+git branch feature-login
+
+# Branch'a geç
+git checkout feature-login
+
+# Oluştur ve geç (tek komut)
+git checkout -b feature-login
+
+# Modern yöntem
+git switch -c feature-login
+
+# Branch sil
+git branch -d feature-login</code></pre>
+                </div>
+
+                <h3>Branch İsimlendirme</h3>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Prefix</th>
+                            <th>Kullanım</th>
+                            <th>Örnek</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><code>feature/</code></td>
+                            <td>Yeni özellik</td>
+                            <td><code>feature/user-auth</code></td>
+                        </tr>
+                        <tr>
+                            <td><code>bugfix/</code></td>
+                            <td>Hata düzeltme</td>
+                            <td><code>bugfix/login-error</code></td>
+                        </tr>
+                        <tr>
+                            <td><code>hotfix/</code></td>
+                            <td>Acil düzeltme</td>
+                            <td><code>hotfix/security-patch</code></td>
+                        </tr>
+                        <tr>
+                            <td><code>docs/</code></td>
+                            <td>Dokümantasyon</td>
+                            <td><code>docs/api-guide</code></td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <h3>Merge İşlemi</h3>
+                <div class="code-block">
+                    <div class="code-header"><span>Terminal</span><button class="copy-btn" onclick="copyCode(this)"><i
+                                class="far fa-copy"></i></button></div>
+                    <pre><code class="language-bash"># main branch'a geç
+git checkout main
+
+# feature branch'ı birleştir
+git merge feature-login
+
+# Opsiyonel: branch'ı sil
+git branch -d feature-login</code></pre>
+                </div>
+
+                <h2 id="fork">🍴 Fork ve Clone</h2>
+
+                <table>
+                    <thead>
+                        <tr>
+                            <th>İşlem</th>
+                            <th>Clone</th>
+                            <th>Fork</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Nerede?</strong></td>
+                            <td>Bilgisayarınızda</td>
+                            <td>GitHub hesabınızda</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Amaç</strong></td>
+                            <td>Projeyi indirmek</td>
+                            <td>Projeyi kopyalamak</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Kullanım</strong></td>
+                            <td>Kendi projeleriniz</td>
+                            <td>Başkalarının projeleri</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <h3>Açık Kaynak Katkı Workflow</h3>
+                <div class="steps">
+                    <div class="step">
+                        <div class="step-number">1</div>
+                        <div class="step-content"><strong>Fork</strong><span>Projeyi GitHub'da fork edin</span></div>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">2</div>
+                        <div class="step-content"><strong>Clone</strong><span>Fork'unuzu bilgisayarınıza
+                                klonlayın</span></div>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">3</div>
+                        <div class="step-content"><strong>Branch</strong><span>Yeni branch oluşturun</span></div>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">4</div>
+                        <div class="step-content"><strong>Değişiklik</strong><span>Kod değişikliklerinizi yapın</span>
+                        </div>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">5</div>
+                        <div class="step-content"><strong>Push</strong><span>Fork'unuza push edin</span></div>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">6</div>
+                        <div class="step-content"><strong>PR</strong><span>Pull Request açın</span></div>
+                    </div>
+                </div>
+
+                <h2 id="commits">📝 Conventional Commits</h2>
+
+                <p>Commit mesajları için endüstri standardı format:</p>
+
+                <div class="code-block">
+                    <div class="code-header"><span>Format</span></div>
+                    <pre><code>&lt;type&gt;[scope]: &lt;description&gt;
+
+[optional body]
+
+[optional footer]</code></pre>
+                </div>
+
+                <h3>Commit Tipleri</h3>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Tip</th>
+                            <th>Emoji</th>
+                            <th>Açıklama</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><code>feat</code></td>
+                            <td>✨</td>
+                            <td>Yeni özellik</td>
+                        </tr>
+                        <tr>
+                            <td><code>fix</code></td>
+                            <td>🐛</td>
+                            <td>Hata düzeltme</td>
+                        </tr>
+                        <tr>
+                            <td><code>docs</code></td>
+                            <td>📚</td>
+                            <td>Dokümantasyon</td>
+                        </tr>
+                        <tr>
+                            <td><code>style</code></td>
+                            <td>💄</td>
+                            <td>Kod formatı</td>
+                        </tr>
+                        <tr>
+                            <td><code>refactor</code></td>
+                            <td>♻️</td>
+                            <td>Kod yeniden düzenleme</td>
+                        </tr>
+                        <tr>
+                            <td><code>test</code></td>
+                            <td>🧪</td>
+                            <td>Test ekleme</td>
+                        </tr>
+                        <tr>
+                            <td><code>chore</code></td>
+                            <td>🔧</td>
+                            <td>Bakım işleri</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <h3>Örnekler</h3>
+                <div class="code-block">
+                    <div class="code-header"><span>Terminal</span><button class="copy-btn" onclick="copyCode(this)"><i
+                                class="far fa-copy"></i></button></div>
+                    <pre><code class="language-bash"># ✅ İyi örnekler
+git commit -m "feat: kullanıcı login sayfası eklendi"
+git commit -m "fix: şifre sıfırlama hatası düzeltildi"
+git commit -m "docs: API dokümantasyonu güncellendi"
+git commit -m "refactor(auth): token yönetimi iyileştirildi"
+
+# ❌ Kötü örnekler
+git commit -m "güncelleme"
+git commit -m "fix"
+git commit -m "asdasd"</code></pre>
+                </div>
+
+                <div class="page-nav">
+                    <a href="module2.html" class="nav-prev"><i class="fas fa-arrow-left"></i><span>Modül 2: Temel
+                            Beceriler</span></a>
+                    <a href="module4.html" class="nav-next"><span>Modül 4: Takım Çalışması</span><i
+                            class="fas fa-arrow-right"></i></a>
+                </div>
+            </article>
+
+            <footer class="footer">
+                <p>Made with ❤️ by <a href="https://github.com/Furk4nBulut" target="_blank">Furkan Bulut</a></p>
+            </footer>
+        </main>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/languages/bash.min.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>

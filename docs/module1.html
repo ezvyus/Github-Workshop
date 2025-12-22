@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modül 1: Giriş ve Motivasyon | GitHub Workshop</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github-dark.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="header-left">
+            <button class="sidebar-toggle" id="sidebarToggle">
+                <i class="fas fa-bars"></i>
+            </button>
+            <a href="index.html" class="logo">
+                <i class="fab fa-github"></i>
+                <span>GitHub Workshop</span>
+            </a>
+        </div>
+        <div class="header-right">
+            <a href="https://github.com/Furk4nBulut/Github-Workshop" target="_blank" class="header-link">
+                <i class="fab fa-github"></i>
+                <span>GitHub</span>
+            </a>
+        </div>
+    </header>
+
+    <div class="main-wrapper">
+        <!-- Sidebar -->
+        <aside class="sidebar" id="sidebar">
+            <nav class="sidebar-nav">
+                <div class="nav-section">
+                    <a href="index.html" class="nav-item">
+                        <i class="fas fa-home"></i>
+                        <span>Ana Sayfa</span>
+                    </a>
+                </div>
+                <div class="nav-section">
+                    <div class="nav-section-title">
+                        <i class="fas fa-rocket"></i>
+                        <span>Modül 1: Giriş</span>
+                    </div>
+                    <a href="module1.html" class="nav-item active">Git ve GitHub Nedir?</a>
+                    <a href="module1.html#student-pack" class="nav-item">Student Developer Pack</a>
+                    <a href="module1.html#gui" class="nav-item">GUI Araçları</a>
+                </div>
+                <div class="nav-section">
+                    <div class="nav-section-title">
+                        <i class="fas fa-code"></i>
+                        <span>Modül 2: Temel Beceriler</span>
+                    </div>
+                    <a href="module2.html" class="nav-item">Git Komutları</a>
+                    <a href="module2.html#markdown" class="nav-item">Markdown</a>
+                    <a href="module2.html#licenses" class="nav-item">Lisanslar</a>
+                </div>
+                <div class="nav-section">
+                    <div class="nav-section-title">
+                        <i class="fas fa-code-branch"></i>
+                        <span>Modül 3: İş Akışı</span>
+                    </div>
+                    <a href="module3.html" class="nav-item">Branch Yönetimi</a>
+                    <a href="module3.html#fork" class="nav-item">Fork ve Clone</a>
+                    <a href="module3.html#commits" class="nav-item">Conventional Commits</a>
+                </div>
+                <div class="nav-section">
+                    <div class="nav-section-title">
+                        <i class="fas fa-users"></i>
+                        <span>Modül 4: Takım Çalışması</span>
+                    </div>
+                    <a href="module4.html" class="nav-item">Organization</a>
+                    <a href="module4.html#pr" class="nav-item">Pull Request</a>
+                    <a href="module4.html#issues" class="nav-item">Issues ve Projects</a>
+                </div>
+                <div class="nav-section">
+                    <div class="nav-section-title">
+                        <i class="fas fa-bolt"></i>
+                        <span>Modül 5: İleri Seviye</span>
+                    </div>
+                    <a href="module5.html" class="nav-item">Rebase ve Stash</a>
+                    <a href="module5.html#actions" class="nav-item">GitHub Actions</a>
+                </div>
+                <div class="nav-section">
+                    <div class="nav-section-title">
+                        <i class="fas fa-star"></i>
+                        <span>Modül 6: Kariyer</span>
+                    </div>
+                    <a href="module6.html" class="nav-item">Profile README</a>
+                    <a href="module6.html#pages" class="nav-item">GitHub Pages</a>
+                </div>
+                <div class="nav-section">
+                    <div class="nav-section-title">
+                        <i class="fas fa-book"></i>
+                        <span>Referanslar</span>
+                    </div>
+                    <a href="cheatsheet-git.html" class="nav-item">Git Cheat Sheet</a>
+                    <a href="cheatsheet-markdown.html" class="nav-item">Markdown Cheat Sheet</a>
+                    <a href="faq.html" class="nav-item">SSS</a>
+                </div>
+            </nav>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="content">
+            <article class="article">
+                <div class="breadcrumb">
+                    <a href="index.html"><i class="fas fa-home"></i></a>
+                    <span>/</span>
+                    <span>Modül 1</span>
+                </div>
+
+                <h1>🚀 Modül 1: Giriş ve Motivasyon</h1>
+                <p class="lead">Git ve GitHub'ın ne olduğunu, neden önemli olduğunu ve nasıl başlayacağınızı öğrenin.
+                </p>
+
+                <div class="stats-bar">
+                    <div class="stat"><i class="far fa-clock"></i><span>~1 saat</span></div>
+                    <div class="stat"><i class="fas fa-signal"></i><span>Başlangıç</span></div>
+                </div>
+
+                <!-- Git ve GitHub Nedir -->
+                <h2 id="git-github">Git ve GitHub Nedir?</h2>
+
+                <p>Yazılım dünyasına adım atarken en çok duyacağınız iki terim: <strong>Git</strong> ve
+                    <strong>GitHub</strong>. Peki bunlar gerçekten nedir?</p>
+
+                <h3>🔧 Git Nedir?</h3>
+                <p>Git, 2005 yılında Linux'un yaratıcısı <strong>Linus Torvalds</strong> tarafından geliştirilen bir
+                    <strong>dağıtık versiyon kontrol sistemidir</strong>.</p>
+
+                <div class="callout callout-info">
+                    <i class="fas fa-lightbulb"></i>
+                    <div>
+                        <strong>Versiyon Kontrol Sistemi Nedir?</strong><br>
+                        Dosyalarınızdaki değişiklikleri zaman içinde takip eden ve gerektiğinde eski versiyonlara
+                        dönmenizi sağlayan bir sistemdir. Word'deki "Geçmişi Görüntüle" özelliği gibi düşünün, ama çok
+                        daha güçlü!
+                    </div>
+                </div>
+
+                <h3>🌐 GitHub Nedir?</h3>
+                <p>GitHub ise Git repository'lerini <strong>bulutta barındıran</strong> ve <strong>işbirliği</strong>
+                    yapmanızı sağlayan bir platformdur. 2008'de kurulmuş, 2018'de Microsoft tarafından satın alınmıştır.
+                </p>
+
+                <h3>📊 Karşılaştırma</h3>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Özellik</th>
+                            <th>Git</th>
+                            <th>GitHub</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Tanım</strong></td>
+                            <td>Versiyon kontrol sistemi</td>
+                            <td>Bulut hosting platformu</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Çalışma Yeri</strong></td>
+                            <td>Bilgisayarınızda (Yerel)</td>
+                            <td>İnternette (Bulut)</td>
+                        </tr>
+                        <tr>
+                            <td><strong>İşlev</strong></td>
+                            <td>Değişiklikleri takip eder</td>
+                            <td>Paylaşım ve işbirliği sağlar</td>
+                        </tr>
+                        <tr>
+                            <td><strong>İnternet</strong></td>
+                            <td>Gerekmez</td>
+                            <td>Gerekir</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Geliştirici</strong></td>
+                            <td>Linus Torvalds</td>
+                            <td>GitHub Inc. (Microsoft)</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <h3>🎵 Basit Bir Analoji</h3>
+                <div class="callout callout-success">
+                    <i class="fas fa-music"></i>
+                    <div>
+                        <strong>Git</strong>, MP3 formatı gibidir → Müziği (kodu) saklama formatıdır.<br>
+                        <strong>GitHub</strong>, Spotify gibidir → Müziği (kodu) paylaşma ve dinleme platformudur.
+                    </div>
+                </div>
+
+                <h3>❓ Neden Git Kullanmalıyız?</h3>
+                <div class="feature-list">
+                    <div class="feature-item">
+                        <i class="fas fa-check-circle"></i>
+                        <span><strong>Sürüm Takibi:</strong> "final_v2_gercek_final.docx" kâbusundan kurtulun</span>
+                    </div>
+                    <div class="feature-item">
+                        <i class="fas fa-check-circle"></i>
+                        <span><strong>Yedekleme:</strong> Kodunuz hem bilgisayarınızda hem bulutta güvende</span>
+                    </div>
+                    <div class="feature-item">
+                        <i class="fas fa-check-circle"></i>
+                        <span><strong>İşbirliği:</strong> Ekip arkadaşlarınızla aynı projede çalışın</span>
+                    </div>
+                    <div class="feature-item">
+                        <i class="fas fa-check-circle"></i>
+                        <span><strong>Deneme:</strong> Yeni özellikler için güvenli ortam (branch)</span>
+                    </div>
+                    <div class="feature-item">
+                        <i class="fas fa-check-circle"></i>
+                        <span><strong>Geri Alma:</strong> Hata yaptığınızda kolayca geri dönün</span>
+                    </div>
+                </div>
+
+                <!-- Student Developer Pack -->
+                <h2 id="student-pack">🎒 GitHub Student Developer Pack</h2>
+
+                <p>Öğrenciyseniz, GitHub'dan <strong>ücretsiz olarak</strong> birçok profesyonel araç ve hizmet
+                    alabilirsiniz!</p>
+
+                <div class="callout callout-warning">
+                    <i class="fas fa-gift"></i>
+                    <div>
+                        <strong>Toplam değeri 200.000$'ı aşan araçlar!</strong><br>
+                        <a href="https://education.github.com/pack" target="_blank">education.github.com/pack</a>
+                    </div>
+                </div>
+
+                <h3>📦 Dahil Olan Popüler Araçlar</h3>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Araç</th>
+                            <th>Normal Fiyat</th>
+                            <th>Öğrenci Fiyatı</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>GitHub Pro</strong></td>
+                            <td>$4/ay</td>
+                            <td>Ücretsiz</td>
+                        </tr>
+                        <tr>
+                            <td><strong>JetBrains (tüm IDE'ler)</strong></td>
+                            <td>$249/yıl</td>
+                            <td>Ücretsiz</td>
+                        </tr>
+                        <tr>
+                            <td><strong>GitKraken Pro</strong></td>
+                            <td>$59/yıl</td>
+                            <td>Ücretsiz</td>
+                        </tr>
+                        <tr>
+                            <td><strong>DigitalOcean</strong></td>
+                            <td>-</td>
+                            <td>$200 kredi</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Azure</strong></td>
+                            <td>-</td>
+                            <td>$100 kredi</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Namecheap (.me domain)</strong></td>
+                            <td>$18/yıl</td>
+                            <td>1 yıl ücretsiz</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <h3>📝 Başvuru Adımları</h3>
+                <div class="steps">
+                    <div class="step">
+                        <div class="step-number">1</div>
+                        <div class="step-content">
+                            <strong>GitHub hesabı oluşturun</strong>
+                            <span><a href="https://github.com" target="_blank">github.com</a></span>
+                        </div>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">2</div>
+                        <div class="step-content">
+                            <strong>Student Pack sayfasına gidin</strong>
+                            <span><a href="https://education.github.com/pack"
+                                    target="_blank">education.github.com/pack</a></span>
+                        </div>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">3</div>
+                        <div class="step-content">
+                            <strong>Okul e-postanızı ekleyin</strong>
+                            <span>.edu.tr uzantılı e-posta tercih edilir</span>
+                        </div>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">4</div>
+                        <div class="step-content">
+                            <strong>Öğrenci belgenizi yükleyin</strong>
+                            <span>Öğrenci kimliği veya transkript</span>
+                        </div>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">5</div>
+                        <div class="step-content">
+                            <strong>Onay bekleyin</strong>
+                            <span>Genellikle 1-7 gün içinde</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- GUI Araçları -->
+                <h2 id="gui">🖥️ GUI Araçları</h2>
+
+                <p>Git'i terminal yerine görsel arayüzle kullanmak isteyenler için popüler araçlar:</p>
+
+                <h3>1. GitHub Desktop</h3>
+                <p>GitHub'ın resmi GUI uygulaması. Basit ve kullanıcı dostu.</p>
+                <div class="feature-list">
+                    <div class="feature-item"><i class="fas fa-check"></i><span>Ücretsiz</span></div>
+                    <div class="feature-item"><i class="fas fa-check"></i><span>Windows ve Mac desteği</span></div>
+                    <div class="feature-item"><i class="fas fa-check"></i><span>GitHub ile tam entegre</span></div>
+                </div>
+                <p><a href="https://desktop.github.com" target="_blank">📥 İndir: desktop.github.com</a></p>
+
+                <h3>2. GitKraken</h3>
+                <p>Profesyonel ve görsel olarak zengin Git istemcisi.</p>
+                <div class="feature-list">
+                    <div class="feature-item"><i class="fas fa-check"></i><span>Öğrencilere ücretsiz (Pro)</span></div>
+                    <div class="feature-item"><i class="fas fa-check"></i><span>Windows, Mac, Linux</span></div>
+                    <div class="feature-item"><i class="fas fa-check"></i><span>Görsel branch grafiği</span></div>
+                </div>
+                <p><a href="https://www.gitkraken.com" target="_blank">📥 İndir: gitkraken.com</a></p>
+
+                <h3>3. VS Code (Dahili Git)</h3>
+                <p>Zaten VS Code kullanıyorsanız, dahili Git özelliklerini kullanabilirsiniz.</p>
+                <div class="feature-list">
+                    <div class="feature-item"><i class="fas fa-check"></i><span>Ücretsiz</span></div>
+                    <div class="feature-item"><i class="fas fa-check"></i><span>Tüm platformlar</span></div>
+                    <div class="feature-item"><i class="fas fa-check"></i><span>Kod editörü ile entegre</span></div>
+                </div>
+
+                <div class="callout callout-info">
+                    <i class="fas fa-lightbulb"></i>
+                    <div>
+                        <strong>Öneri:</strong> Başlangıçta GUI kullanabilirsiniz, ancak terminal komutlarını da
+                        öğrenmenizi şiddetle tavsiye ediyoruz. Profesyonel ortamlarda terminal bilgisi çok değerlidir!
+                    </div>
+                </div>
+
+                <!-- Navigation -->
+                <div class="page-nav">
+                    <a href="index.html" class="nav-prev">
+                        <i class="fas fa-arrow-left"></i>
+                        <span>Ana Sayfa</span>
+                    </a>
+                    <a href="module2.html" class="nav-next">
+                        <span>Modül 2: Temel Beceriler</span>
+                        <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+            </article>
+
+            <footer class="footer">
+                <p>Made with ❤️ by <a href="https://github.com/Furk4nBulut" target="_blank">Furkan Bulut</a></p>
+                <p>© 2024 GitHub Workshop | MIT License</p>
+            </footer>
+        </main>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>

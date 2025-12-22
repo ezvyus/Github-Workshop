@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modül 5: İleri Seviye | GitHub Workshop</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github-dark.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header class="header">
+        <div class="header-left">
+            <button class="sidebar-toggle" id="sidebarToggle"><i class="fas fa-bars"></i></button>
+            <a href="index.html" class="logo"><i class="fab fa-github"></i><span>GitHub Workshop</span></a>
+        </div>
+        <div class="header-right">
+            <a href="https://github.com/Furk4nBulut/Github-Workshop" target="_blank" class="header-link"><i
+                    class="fab fa-github"></i><span>GitHub</span></a>
+        </div>
+    </header>
+
+    <div class="main-wrapper">
+        <aside class="sidebar" id="sidebar">
+            <nav class="sidebar-nav">
+                <div class="nav-section"><a href="index.html" class="nav-item"><i class="fas fa-home"></i><span>Ana
+                            Sayfa</span></a></div>
+                <div class="nav-section">
+                    <div class="nav-section-title"><i class="fas fa-rocket"></i><span>Modül 1-4</span></div>
+                    <a href="module1.html" class="nav-item">Giriş</a>
+                    <a href="module2.html" class="nav-item">Temel Beceriler</a>
+                    <a href="module3.html" class="nav-item">İş Akışı</a>
+                    <a href="module4.html" class="nav-item">Takım Çalışması</a>
+                </div>
+                <div class="nav-section">
+                    <div class="nav-section-title"><i class="fas fa-bolt"></i><span>Modül 5: İleri</span></div>
+                    <a href="module5.html" class="nav-item active">Rebase ve Stash</a>
+                    <a href="module5.html#actions" class="nav-item">GitHub Actions</a>
+                </div>
+                <div class="nav-section">
+                    <div class="nav-section-title"><i class="fas fa-star"></i><span>Modül 6</span></div><a
+                        href="module6.html" class="nav-item">Kariyer</a>
+                </div>
+            </nav>
+        </aside>
+
+        <main class="content">
+            <article class="article">
+                <div class="breadcrumb"><a href="index.html"><i class="fas fa-home"></i></a><span>/</span><span>Modül
+                        5</span></div>
+
+                <h1>⚡ Modül 5: İleri Seviye</h1>
+                <p class="lead">Rebase, Stash, Cherry-pick ve GitHub Actions ile otomasyon.</p>
+
+                <div class="stats-bar">
+                    <div class="stat"><i class="far fa-clock"></i><span>~2 saat</span></div>
+                    <div class="stat"><i class="fas fa-signal"></i><span>İleri</span></div>
+                </div>
+
+                <h2 id="rebase">🔀 Git Rebase</h2>
+
+                <p>Rebase, commit geçmişini yeniden düzenlemenizi sağlar.</p>
+
+                <div class="callout callout-danger">
+                    <i class="fas fa-exclamation-triangle"></i>
+                    <div><strong>Altın Kural:</strong> Push edilmiş commit'leri asla rebase yapmayın!</div>
+                </div>
+
+                <h3>Merge vs Rebase</h3>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Özellik</th>
+                            <th>Merge</th>
+                            <th>Rebase</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Geçmiş</td>
+                            <td>Merge commit oluşturur</td>
+                            <td>Linear geçmiş</td>
+                        </tr>
+                        <tr>
+                            <td>Güvenlik</td>
+                            <td>Geçmişi değiştirmez</td>
+                            <td>Geçmişi yeniden yazar</td>
+                        </tr>
+                        <tr>
+                            <td>Kullanım</td>
+                            <td>Takım çalışmasında</td>
+                            <td>Bireysel temizlik</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <div class="code-block">
+                    <div class="code-header"><span>Terminal</span><button class="copy-btn" onclick="copyCode(this)"><i
+                                class="far fa-copy"></i></button></div>
+                    <pre><code class="language-bash"># main üzerine rebase
+git checkout feature-branch
+git rebase main
+
+# İnteraktif rebase (son 3 commit)
+git rebase -i HEAD~3
+
+# Conflict çözdükten sonra devam
+git rebase --continue
+
+# İptal et
+git rebase --abort</code></pre>
+                </div>
+
+                <h2 id="stash">📦 Git Stash</h2>
+
+                <p>Değişikliklerinizi geçici olarak saklayın, başka bir işe geçin, sonra geri alın.</p>
+
+                <div class="code-block">
+                    <div class="code-header"><span>Terminal</span><button class="copy-btn" onclick="copyCode(this)"><i
+                                class="far fa-copy"></i></button></div>
+                    <pre><code class="language-bash"># Değişiklikleri sakla
+git stash
+
+# Mesaj ile sakla
+git stash save "login WIP"
+
+# Stash listesi
+git stash list
+
+# Son stash'ı geri al ve sil
+git stash pop
+
+# Son stash'ı geri al (silme)
+git stash apply
+
+# Belirli stash'ı uygula
+git stash apply stash@{2}
+
+# Stash sil
+git stash drop stash@{0}
+
+# Tüm stash'ları sil
+git stash clear</code></pre>
+                </div>
+
+                <h2 id="cherry-pick">🍒 Cherry-pick</h2>
+
+                <p>Belirli bir commit'i başka bir branch'a uygulayın:</p>
+
+                <div class="code-block">
+                    <div class="code-header"><span>Terminal</span><button class="copy-btn" onclick="copyCode(this)"><i
+                                class="far fa-copy"></i></button></div>
+                    <pre><code class="language-bash"># Commit hash'ini al ve uygula
+git cherry-pick abc1234
+
+# Birden fazla commit
+git cherry-pick abc1234 def5678
+
+# Commit oluşturmadan uygula
+git cherry-pick --no-commit abc1234</code></pre>
+                </div>
+
+                <h2 id="actions">🤖 GitHub Actions</h2>
+
+                <p>GitHub Actions, CI/CD pipeline oluşturmanızı sağlar.</p>
+
+                <h3>Workflow Yapısı</h3>
+                <div class="code-block">
+                    <div class="code-header"><span>.github/workflows/ci.yml</span><button class="copy-btn"
+                            onclick="copyCode(this)"><i class="far fa-copy"></i></button></div>
+                    <pre><code class="language-yaml">name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+      
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      
+      - name: Install dependencies
+        run: npm ci
+      
+      - name: Run tests
+        run: npm test</code></pre>
+                </div>
+
+                <h3>Temel Kavramlar</h3>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Kavram</th>
+                            <th>Açıklama</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Workflow</strong></td>
+                            <td>Otomatik süreç tanımı (.yml)</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Event</strong></td>
+                            <td>Tetikleyici (push, PR, schedule)</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Job</strong></td>
+                            <td>Paralel çalışabilen iş grubu</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Step</strong></td>
+                            <td>Job içindeki tek adım</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Action</strong></td>
+                            <td>Hazır iş parçacıkları</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <div class="page-nav">
+                    <a href="module4.html" class="nav-prev"><i class="fas fa-arrow-left"></i><span>Modül 4:
+                            Takım</span></a>
+                    <a href="module6.html" class="nav-next"><span>Modül 6: Kariyer</span><i
+                            class="fas fa-arrow-right"></i></a>
+                </div>
+            </article>
+            <footer class="footer">
+                <p>Made with ❤️ by <a href="https://github.com/Furk4nBulut" target="_blank">Furkan Bulut</a></p>
+            </footer>
+        </main>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/languages/bash.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/languages/yaml.min.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>

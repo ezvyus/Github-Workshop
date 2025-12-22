@@ -1,345 +1,385 @@
 <!DOCTYPE html>
 <html lang="tr">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="GitHub Workshop - Sıfırdan Profesyonelliğe Kapsamlı Git ve GitHub Eğitimi">
-    <meta name="keywords" content="git, github, workshop, eğitim, türkçe, öğrenci">
-    <meta name="author" content="Furkan Bulut">
-    
-    <!-- Open Graph -->
-    <meta property="og:title" content="GitHub Workshop - Kapsamlı GitHub Eğitimi">
-    <meta property="og:description" content="Bilgisayar Programcılığı Öğrencileri İçin Sıfırdan Profesyonelliğe GitHub Eğitimi">
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://furk4nbulut.github.io/Github-Workshop">
-    
-    <title>GitHub Workshop | Kapsamlı GitHub Eğitimi</title>
-    
+    <meta name="description" content="GitHub Workshop - Kapsamlı Git ve GitHub Eğitimi Wiki">
+    <title>GitHub Workshop | Wiki</title>
+
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-    
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap"
+        rel="stylesheet">
+
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    
+
+    <!-- Highlight.js for code highlighting -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github-dark.min.css">
+
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
-    <!-- Navbar -->
-    <nav class="navbar">
-        <div class="nav-container">
-            <a href="#" class="nav-logo">
+    <!-- Header -->
+    <header class="header">
+        <div class="header-left">
+            <button class="sidebar-toggle" id="sidebarToggle">
+                <i class="fas fa-bars"></i>
+            </button>
+            <a href="index.html" class="logo">
                 <i class="fab fa-github"></i>
                 <span>GitHub Workshop</span>
             </a>
-            <ul class="nav-menu">
-                <li><a href="#modules">Modüller</a></li>
-                <li><a href="#features">Özellikler</a></li>
-                <li><a href="#resources">Kaynaklar</a></li>
-                <li><a href="https://github.com/Furk4nBulut/Github-Workshop/wiki" target="_blank" class="btn-nav">Wiki</a></li>
-            </ul>
-            <div class="hamburger">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
         </div>
-    </nav>
-
-    <!-- Hero Section -->
-    <section class="hero">
-        <div class="hero-bg">
-            <div class="hero-gradient"></div>
+        <div class="header-right">
+            <a href="https://github.com/Furk4nBulut/Github-Workshop" target="_blank" class="header-link">
+                <i class="fab fa-github"></i>
+                <span>GitHub</span>
+            </a>
         </div>
-        <div class="hero-content">
-            <div class="hero-badge">
-                <i class="fas fa-graduation-cap"></i>
-                <span>Ücretsiz Eğitim</span>
-            </div>
-            <h1>
-                <span class="gradient-text">GitHub</span> Workshop
-            </h1>
-            <p class="hero-subtitle">
-                Sıfırdan Profesyonelliğe Kapsamlı Git ve GitHub Eğitimi
-            </p>
-            <p class="hero-description">
-                Bilgisayar Programcılığı ve Yazılım Mühendisliği öğrencileri için 
-                hazırlanmış, uygulamalı 6 modüllük kapsamlı eğitim.
-            </p>
-            <div class="hero-buttons">
-                <a href="https://github.com/Furk4nBulut/Github-Workshop/wiki" class="btn btn-primary">
-                    <i class="fas fa-book-open"></i>
-                    Eğitime Başla
-                </a>
-                <a href="https://github.com/Furk4nBulut/Github-Workshop" class="btn btn-secondary">
-                    <i class="fab fa-github"></i>
-                    GitHub Repo
-                </a>
-            </div>
-            <div class="hero-stats">
-                <div class="stat-item">
-                    <span class="stat-number">6</span>
-                    <span class="stat-label">Modül</span>
-                </div>
-                <div class="stat-item">
-                    <span class="stat-number">9+</span>
-                    <span class="stat-label">Saat</span>
-                </div>
-                <div class="stat-item">
-                    <span class="stat-number">25+</span>
-                    <span class="stat-label">Konu</span>
-                </div>
-                <div class="stat-item">
-                    <span class="stat-number">6</span>
-                    <span class="stat-label">Lab</span>
-                </div>
-            </div>
-        </div>
-        <div class="hero-visual">
-            <div class="code-window">
-                <div class="code-header">
-                    <span class="dot red"></span>
-                    <span class="dot yellow"></span>
-                    <span class="dot green"></span>
-                    <span class="code-title">terminal</span>
-                </div>
-                <div class="code-body">
-                    <pre><code><span class="prompt">$</span> git init
-<span class="output">Initialized empty Git repository</span>
+    </header>
 
-<span class="prompt">$</span> git add .
+    <div class="main-wrapper">
+        <!-- Sidebar -->
+        <aside class="sidebar" id="sidebar">
+            <nav class="sidebar-nav">
+                <!-- Home -->
+                <div class="nav-section">
+                    <a href="index.html" class="nav-item active">
+                        <i class="fas fa-home"></i>
+                        <span>Ana Sayfa</span>
+                    </a>
+                </div>
 
-<span class="prompt">$</span> git commit -m "<span class="string">feat: ilk commit</span>"
-<span class="output">[main (root-commit)] feat: ilk commit</span>
-
-<span class="prompt">$</span> git push origin main
-<span class="output">✓ Pushed to GitHub successfully!</span></code></pre>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Features Section -->
-    <section id="features" class="features">
-        <div class="container">
-            <div class="section-header">
-                <span class="section-badge">Neden Bu Eğitim?</span>
-                <h2>Fark Yaratan Özellikler</h2>
-                <p>Modern yazılım geliştirme dünyasında öne çıkmanız için gereken her şey</p>
-            </div>
-            <div class="features-grid">
-                <div class="feature-card">
-                    <div class="feature-icon">
-                        <i class="fas fa-laptop-code"></i>
-                    </div>
-                    <h3>Pratik Odaklı</h3>
-                    <p>Her modülde uygulamalı lab alıştırmaları ile öğrendiklerinizi pekiştirin.</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">
-                        <i class="fas fa-book"></i>
-                    </div>
-                    <h3>Türkçe İçerik</h3>
-                    <p>Tamamen Türkçe hazırlanmış kapsamlı dokümantasyon ve örnekler.</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">
-                        <i class="fas fa-industry"></i>
-                    </div>
-                    <h3>Endüstri Standartları</h3>
-                    <p>Conventional Commits, Code Review ve CI/CD gibi profesyonel pratikler.</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">
-                        <i class="fas fa-users"></i>
-                    </div>
-                    <h3>Takım Çalışması</h3>
-                    <p>Organization, PR, Issues ve Projects ile ekip çalışması.</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">
+                <!-- Modül 1 -->
+                <div class="nav-section">
+                    <div class="nav-section-title">
                         <i class="fas fa-rocket"></i>
+                        <span>Modül 1: Giriş</span>
                     </div>
-                    <h3>GitHub Actions</h3>
-                    <p>CI/CD pipeline oluşturma ve otomasyon temelleri.</p>
+                    <a href="module1.html" class="nav-item">Git ve GitHub Nedir?</a>
+                    <a href="module1.html#student-pack" class="nav-item">Student Developer Pack</a>
+                    <a href="module1.html#gui" class="nav-item">GUI Araçları</a>
                 </div>
-                <div class="feature-card">
-                    <div class="feature-icon">
-                        <i class="fas fa-briefcase"></i>
-                    </div>
-                    <h3>Kariyer Gelişimi</h3>
-                    <p>Portfolyo oluşturma ve GitHub profilinizi optimize etme.</p>
-                </div>
-            </div>
-        </div>
-    </section>
 
-    <!-- Modules Section -->
-    <section id="modules" class="modules">
-        <div class="container">
-            <div class="section-header">
-                <span class="section-badge">Müfredat</span>
-                <h2>Eğitim Modülleri</h2>
-                <p>Sıfırdan profesyonelliğe adım adım ilerleme</p>
-            </div>
-            <div class="modules-grid">
-                <div class="module-card">
-                    <div class="module-number">01</div>
-                    <div class="module-icon"><i class="fas fa-rocket"></i></div>
-                    <h3>Giriş ve Motivasyon</h3>
-                    <p>Git vs GitHub, Student Pack, GUI araçları</p>
-                    <span class="module-time"><i class="far fa-clock"></i> ~1 saat</span>
-                    <a href="https://github.com/Furk4nBulut/Github-Workshop/wiki/Giriş-Ve-Motivasyon" class="module-link">
-                        Başla <i class="fas fa-arrow-right"></i>
-                    </a>
-                </div>
-                <div class="module-card">
-                    <div class="module-number">02</div>
-                    <div class="module-icon"><i class="fas fa-code"></i></div>
-                    <h3>Temel Teknik Beceriler</h3>
-                    <p>Git komutları, Markdown, Lisanslar</p>
-                    <span class="module-time"><i class="far fa-clock"></i> ~1.5 saat</span>
-                    <a href="https://github.com/Furk4nBulut/Github-Workshop/wiki/Temel-Teknik-Beceriler" class="module-link">
-                        Başla <i class="fas fa-arrow-right"></i>
-                    </a>
-                </div>
-                <div class="module-card">
-                    <div class="module-number">03</div>
-                    <div class="module-icon"><i class="fas fa-code-branch"></i></div>
-                    <h3>Profesyonel İş Akışı</h3>
-                    <p>Branch, Fork, Conventional Commits</p>
-                    <span class="module-time"><i class="far fa-clock"></i> ~1.5 saat</span>
-                    <a href="https://github.com/Furk4nBulut/Github-Workshop/wiki/Profesyonel-Is-Akisi" class="module-link">
-                        Başla <i class="fas fa-arrow-right"></i>
-                    </a>
-                </div>
-                <div class="module-card">
-                    <div class="module-number">04</div>
-                    <div class="module-icon"><i class="fas fa-users"></i></div>
-                    <h3>Takım Çalışması</h3>
-                    <p>Organization, PR, Issues, Projects</p>
-                    <span class="module-time"><i class="far fa-clock"></i> ~1.5 saat</span>
-                    <a href="https://github.com/Furk4nBulut/Github-Workshop/wiki/Takim-Calismasi" class="module-link">
-                        Başla <i class="fas fa-arrow-right"></i>
-                    </a>
-                </div>
-                <div class="module-card">
-                    <div class="module-number">05</div>
-                    <div class="module-icon"><i class="fas fa-bolt"></i></div>
-                    <h3>İleri Seviye</h3>
-                    <p>Rebase, Stash, GitHub Actions</p>
-                    <span class="module-time"><i class="far fa-clock"></i> ~2 saat</span>
-                    <a href="https://github.com/Furk4nBulut/Github-Workshop/wiki/Ileri-Seviye" class="module-link">
-                        Başla <i class="fas fa-arrow-right"></i>
-                    </a>
-                </div>
-                <div class="module-card">
-                    <div class="module-number">06</div>
-                    <div class="module-icon"><i class="fas fa-star"></i></div>
-                    <h3>Vitrin ve Kariyer</h3>
-                    <p>Profile README, GitHub Pages</p>
-                    <span class="module-time"><i class="far fa-clock"></i> ~1.5 saat</span>
-                    <a href="https://github.com/Furk4nBulut/Github-Workshop/wiki/Vitrin-Ve-Kariyer" class="module-link">
-                        Başla <i class="fas fa-arrow-right"></i>
-                    </a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Resources Section -->
-    <section id="resources" class="resources">
-        <div class="container">
-            <div class="section-header">
-                <span class="section-badge">Materyaller</span>
-                <h2>Ek Kaynaklar</h2>
-                <p>Öğrenme sürecinizi destekleyecek yardımcı materyaller</p>
-            </div>
-            <div class="resources-grid">
-                <a href="https://github.com/Furk4nBulut/Github-Workshop/tree/main/cheatsheets" class="resource-card">
-                    <i class="fas fa-file-alt"></i>
-                    <h4>Cheat Sheets</h4>
-                    <p>Hızlı referans kartları</p>
-                </a>
-                <a href="https://github.com/Furk4nBulut/Github-Workshop/tree/main/exercises" class="resource-card">
-                    <i class="fas fa-flask"></i>
-                    <h4>Lab Alıştırmaları</h4>
-                    <p>Pratik uygulamalar</p>
-                </a>
-                <a href="https://github.com/Furk4nBulut/Github-Workshop/tree/main/templates" class="resource-card">
-                    <i class="fas fa-copy"></i>
-                    <h4>Şablonlar</h4>
-                    <p>README ve GitHub templates</p>
-                </a>
-                <a href="https://github.com/Furk4nBulut/Github-Workshop/blob/main/docs/FAQ.md" class="resource-card">
-                    <i class="fas fa-question-circle"></i>
-                    <h4>SSS</h4>
-                    <p>Sık sorulan sorular</p>
-                </a>
-            </div>
-        </div>
-    </section>
-
-    <!-- CTA Section -->
-    <section class="cta">
-        <div class="container">
-            <div class="cta-content">
-                <h2>Öğrenmeye Hazır mısınız?</h2>
-                <p>Hemen eğitime başlayın ve GitHub profesyoneli olun!</p>
-                <div class="cta-buttons">
-                    <a href="https://github.com/Furk4nBulut/Github-Workshop/wiki" class="btn btn-primary btn-lg">
-                        <i class="fas fa-play"></i>
-                        Eğitime Başla
-                    </a>
-                    <a href="https://github.com/Furk4nBulut/Github-Workshop" class="btn btn-outline btn-lg">
-                        <i class="fab fa-github"></i>
-                        Yıldız Ver
-                    </a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-brand">
-                    <a href="#" class="footer-logo">
-                        <i class="fab fa-github"></i>
-                        <span>GitHub Workshop</span>
-                    </a>
-                    <p>Bilgisayar Programcılığı Öğrencileri İçin Kapsamlı GitHub Eğitimi</p>
-                </div>
-                <div class="footer-links">
-                    <div class="footer-column">
-                        <h4>Modüller</h4>
-                        <a href="https://github.com/Furk4nBulut/Github-Workshop/wiki/Giriş-Ve-Motivasyon">Giriş</a>
-                        <a href="https://github.com/Furk4nBulut/Github-Workshop/wiki/Temel-Teknik-Beceriler">Temel Beceriler</a>
-                        <a href="https://github.com/Furk4nBulut/Github-Workshop/wiki/Profesyonel-Is-Akisi">İş Akışı</a>
+                <!-- Modül 2 -->
+                <div class="nav-section">
+                    <div class="nav-section-title">
+                        <i class="fas fa-code"></i>
+                        <span>Modül 2: Temel Beceriler</span>
                     </div>
-                    <div class="footer-column">
-                        <h4>Kaynaklar</h4>
-                        <a href="https://github.com/Furk4nBulut/Github-Workshop/tree/main/cheatsheets">Cheat Sheets</a>
-                        <a href="https://github.com/Furk4nBulut/Github-Workshop/tree/main/exercises">Lab'lar</a>
-                        <a href="https://github.com/Furk4nBulut/Github-Workshop/blob/main/docs/FAQ.md">FAQ</a>
+                    <a href="module2.html" class="nav-item">Git Komutları</a>
+                    <a href="module2.html#markdown" class="nav-item">Markdown</a>
+                    <a href="module2.html#licenses" class="nav-item">Lisanslar</a>
+                </div>
+
+                <!-- Modül 3 -->
+                <div class="nav-section">
+                    <div class="nav-section-title">
+                        <i class="fas fa-code-branch"></i>
+                        <span>Modül 3: İş Akışı</span>
                     </div>
-                    <div class="footer-column">
-                        <h4>Bağlantılar</h4>
-                        <a href="https://github.com/Furk4nBulut" target="_blank">GitHub</a>
-                        <a href="https://linkedin.com/in/furk4nbulut" target="_blank">LinkedIn</a>
-                        <a href="https://twitter.com/furaborat" target="_blank">Twitter</a>
+                    <a href="module3.html" class="nav-item">Branch Yönetimi</a>
+                    <a href="module3.html#fork" class="nav-item">Fork ve Clone</a>
+                    <a href="module3.html#commits" class="nav-item">Conventional Commits</a>
+                </div>
+
+                <!-- Modül 4 -->
+                <div class="nav-section">
+                    <div class="nav-section-title">
+                        <i class="fas fa-users"></i>
+                        <span>Modül 4: Takım Çalışması</span>
+                    </div>
+                    <a href="module4.html" class="nav-item">Organization</a>
+                    <a href="module4.html#pr" class="nav-item">Pull Request</a>
+                    <a href="module4.html#issues" class="nav-item">Issues ve Projects</a>
+                </div>
+
+                <!-- Modül 5 -->
+                <div class="nav-section">
+                    <div class="nav-section-title">
+                        <i class="fas fa-bolt"></i>
+                        <span>Modül 5: İleri Seviye</span>
+                    </div>
+                    <a href="module5.html" class="nav-item">Rebase ve Stash</a>
+                    <a href="module5.html#actions" class="nav-item">GitHub Actions</a>
+                    <a href="module5.html#webhooks" class="nav-item">Webhooks</a>
+                </div>
+
+                <!-- Modül 6 -->
+                <div class="nav-section">
+                    <div class="nav-section-title">
+                        <i class="fas fa-star"></i>
+                        <span>Modül 6: Kariyer</span>
+                    </div>
+                    <a href="module6.html" class="nav-item">Profile README</a>
+                    <a href="module6.html#pages" class="nav-item">GitHub Pages</a>
+                    <a href="module6.html#portfolio" class="nav-item">Portfolyo</a>
+                </div>
+
+                <!-- Referanslar -->
+                <div class="nav-section">
+                    <div class="nav-section-title">
+                        <i class="fas fa-book"></i>
+                        <span>Referanslar</span>
+                    </div>
+                    <a href="cheatsheet-git.html" class="nav-item">Git Cheat Sheet</a>
+                    <a href="cheatsheet-markdown.html" class="nav-item">Markdown Cheat Sheet</a>
+                    <a href="cheatsheet-commits.html" class="nav-item">Commit Standartları</a>
+                    <a href="faq.html" class="nav-item">SSS</a>
+                </div>
+            </nav>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="content" id="content">
+            <article class="article">
+                <!-- Breadcrumb -->
+                <div class="breadcrumb">
+                    <a href="index.html"><i class="fas fa-home"></i></a>
+                    <span>/</span>
+                    <span>Ana Sayfa</span>
+                </div>
+
+                <!-- Page Title -->
+                <h1>🎓 GitHub Workshop</h1>
+                <p class="lead">Sıfırdan Profesyonelliğe Kapsamlı Git ve GitHub Eğitimi</p>
+
+                <!-- Stats -->
+                <div class="stats-bar">
+                    <div class="stat">
+                        <i class="fas fa-book"></i>
+                        <span>6 Modül</span>
+                    </div>
+                    <div class="stat">
+                        <i class="fas fa-clock"></i>
+                        <span>~9 Saat</span>
+                    </div>
+                    <div class="stat">
+                        <i class="fas fa-list"></i>
+                        <span>25+ Konu</span>
+                    </div>
+                    <div class="stat">
+                        <i class="fas fa-flask"></i>
+                        <span>6 Lab</span>
                     </div>
                 </div>
-            </div>
-            <div class="footer-bottom">
+
+                <!-- Content -->
+                <h2 id="about">📌 Bu Eğitim Hakkında</h2>
+                <p>Bu wiki, GitHub'ı sıfırdan öğrenmek isteyen öğrenciler için hazırlanmış <strong>kapsamlı bir
+                        rehberdir</strong>. Eğitim sonunda:</p>
+
+                <div class="feature-list">
+                    <div class="feature-item">
+                        <i class="fas fa-check-circle"></i>
+                        <span><strong>Git & GitHub</strong> temel mantığını kavrayacaksınız</span>
+                    </div>
+                    <div class="feature-item">
+                        <i class="fas fa-check-circle"></i>
+                        <span><strong>Commit Standartları</strong> ile profesyonel mesaj yazımı öğreneceksiniz</span>
+                    </div>
+                    <div class="feature-item">
+                        <i class="fas fa-check-circle"></i>
+                        <span><strong>Takım Araçları</strong> PR, Issues, Projects kullanabileceksiniz</span>
+                    </div>
+                    <div class="feature-item">
+                        <i class="fas fa-check-circle"></i>
+                        <span><strong>Portfolyo</strong> GitHub profilinizi vitrine dönüştürebileceksiniz</span>
+                    </div>
+                    <div class="feature-item">
+                        <i class="fas fa-check-circle"></i>
+                        <span><strong>Açık Kaynak</strong> projelere katkı sağlayabileceksiniz</span>
+                    </div>
+                </div>
+
+                <h2 id="curriculum">📚 Müfredat</h2>
+
+                <div class="module-cards">
+                    <a href="module1.html" class="module-card">
+                        <div class="module-icon"><i class="fas fa-rocket"></i></div>
+                        <div class="module-info">
+                            <h3>Modül 1: Giriş ve Motivasyon</h3>
+                            <p>Git ve GitHub nedir, Student Pack, GUI araçları</p>
+                            <span class="module-time"><i class="far fa-clock"></i> ~1 saat</span>
+                        </div>
+                        <i class="fas fa-chevron-right"></i>
+                    </a>
+
+                    <a href="module2.html" class="module-card">
+                        <div class="module-icon"><i class="fas fa-code"></i></div>
+                        <div class="module-info">
+                            <h3>Modül 2: Temel Teknik Beceriler</h3>
+                            <p>Git komutları, Markdown, Lisanslar</p>
+                            <span class="module-time"><i class="far fa-clock"></i> ~1.5 saat</span>
+                        </div>
+                        <i class="fas fa-chevron-right"></i>
+                    </a>
+
+                    <a href="module3.html" class="module-card">
+                        <div class="module-icon"><i class="fas fa-code-branch"></i></div>
+                        <div class="module-info">
+                            <h3>Modül 3: Profesyonel İş Akışı</h3>
+                            <p>Branch, Fork/Clone, Conventional Commits</p>
+                            <span class="module-time"><i class="far fa-clock"></i> ~1.5 saat</span>
+                        </div>
+                        <i class="fas fa-chevron-right"></i>
+                    </a>
+
+                    <a href="module4.html" class="module-card">
+                        <div class="module-icon"><i class="fas fa-users"></i></div>
+                        <div class="module-info">
+                            <h3>Modül 4: Takım Çalışması</h3>
+                            <p>Organization, PR, Issues, Projects</p>
+                            <span class="module-time"><i class="far fa-clock"></i> ~1.5 saat</span>
+                        </div>
+                        <i class="fas fa-chevron-right"></i>
+                    </a>
+
+                    <a href="module5.html" class="module-card">
+                        <div class="module-icon"><i class="fas fa-bolt"></i></div>
+                        <div class="module-info">
+                            <h3>Modül 5: İleri Seviye</h3>
+                            <p>Rebase, Stash, Cherry-pick, GitHub Actions</p>
+                            <span class="module-time"><i class="far fa-clock"></i> ~2 saat</span>
+                        </div>
+                        <i class="fas fa-chevron-right"></i>
+                    </a>
+
+                    <a href="module6.html" class="module-card">
+                        <div class="module-icon"><i class="fas fa-star"></i></div>
+                        <div class="module-info">
+                            <h3>Modül 6: Vitrin ve Kariyer</h3>
+                            <p>Profile README, GitHub Pages, Portfolyo</p>
+                            <span class="module-time"><i class="far fa-clock"></i> ~1.5 saat</span>
+                        </div>
+                        <i class="fas fa-chevron-right"></i>
+                    </a>
+                </div>
+
+                <h2 id="quick-start">🚀 Hızlı Başlangıç</h2>
+
+                <div class="callout callout-info">
+                    <i class="fas fa-info-circle"></i>
+                    <div>
+                        <strong>Eğer daha önce hiç Git kullanmadıysanız, şu sırayı takip edin:</strong>
+                    </div>
+                </div>
+
+                <div class="steps">
+                    <div class="step">
+                        <div class="step-number">1</div>
+                        <div class="step-content">
+                            <strong>Modül 1'i okuyun</strong>
+                            <span>Motivasyonunuzu yükseltin</span>
+                        </div>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">2</div>
+                        <div class="step-content">
+                            <strong>Git'i kurun</strong>
+                            <span><a href="https://git-scm.com" target="_blank">git-scm.com</a></span>
+                        </div>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">3</div>
+                        <div class="step-content">
+                            <strong>GitHub hesabı oluşturun</strong>
+                            <span><a href="https://github.com" target="_blank">github.com</a></span>
+                        </div>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">4</div>
+                        <div class="step-content">
+                            <strong>Student Pack'e başvurun</strong>
+                            <span><a href="https://education.github.com/pack"
+                                    target="_blank">education.github.com/pack</a></span>
+                        </div>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">5</div>
+                        <div class="step-content">
+                            <strong>Modül 2 ile komutları öğrenin</strong>
+                            <span>Temel Git komutları</span>
+                        </div>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">6</div>
+                        <div class="step-content">
+                            <strong>İlk projenizi oluşturun!</strong>
+                            <span>Öğrendiklerinizi uygulayın</span>
+                        </div>
+                    </div>
+                </div>
+
+                <h2 id="first-config">⚙️ İlk Yapılandırma</h2>
+
+                <p>Git'i bilgisayarınıza kurduktan sonra kimliğinizi tanıtın:</p>
+
+                <div class="code-block">
+                    <div class="code-header">
+                        <span>Terminal</span>
+                        <button class="copy-btn" onclick="copyCode(this)">
+                            <i class="far fa-copy"></i>
+                        </button>
+                    </div>
+                    <pre><code class="language-bash"># Kullanıcı adınızı ayarlayın
+git config --global user.name "Adınız Soyadınız"
+
+# E-posta adresinizi ayarlayın (GitHub e-postanız olmalı)
+git config --global user.email "email@example.com"
+
+# Ayarları kontrol edin
+git config --list</code></pre>
+                </div>
+
+                <h2 id="resources">🔗 Faydalı Linkler</h2>
+
+                <div class="links-grid">
+                    <a href="https://docs.github.com" target="_blank" class="link-card">
+                        <i class="fas fa-book"></i>
+                        <span>GitHub Docs</span>
+                    </a>
+                    <a href="https://git-scm.com/book/tr" target="_blank" class="link-card">
+                        <i class="fas fa-book-open"></i>
+                        <span>Git Book (TR)</span>
+                    </a>
+                    <a href="https://skills.github.com" target="_blank" class="link-card">
+                        <i class="fas fa-graduation-cap"></i>
+                        <span>GitHub Skills</span>
+                    </a>
+                    <a href="https://education.github.com/pack" target="_blank" class="link-card">
+                        <i class="fas fa-gift"></i>
+                        <span>Student Pack</span>
+                    </a>
+                </div>
+
+                <!-- Navigation -->
+                <div class="page-nav">
+                    <div></div>
+                    <a href="module1.html" class="nav-next">
+                        <span>Modül 1: Giriş</span>
+                        <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+            </article>
+
+            <!-- Footer -->
+            <footer class="footer">
                 <p>Made with ❤️ by <a href="https://github.com/Furk4nBulut" target="_blank">Furkan Bulut</a></p>
-                <p>© 2024 GitHub Workshop. MIT License.</p>
-            </div>
-        </div>
-    </footer>
+                <p>© 2024 GitHub Workshop | MIT License</p>
+            </footer>
+        </main>
+    </div>
 
+    <!-- Highlight.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/languages/bash.min.js"></script>
     <script src="script.js"></script>
 </body>
+
 </html>
